@@ -17,8 +17,8 @@ func InitCon() {
 	hostName := "tcp(" + fmt.Sprint(os.Getenv("db_host")) + ":" + fmt.Sprint(os.Getenv("db_port")) + ")"
 	urlConnection := usernameAndPassword + "@" + hostName + "/" + fmt.Sprint(os.Getenv("db_name")) + "?charset=utf8&parseTime=true&loc=UTC"
 
-	fmt.Printf("⇨ Connect MYSQL to Server %s ... \n", hostName)
-	log.Println(urlConnection)
+	// fmt.Printf("⇨ Connect MYSQL to Server %s ... \n", hostName)
+	// log.Println(urlConnection)
 	db, err := apmsql.Open(os.Getenv("driver"), urlConnection)
 	if err != nil {
 		log.Fatalf("⇨ %s Data source %s:%s , Failed : %s \n", os.Getenv("driver"), os.Getenv("db_host"), os.Getenv("db_port"), err.Error())

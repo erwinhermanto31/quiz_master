@@ -24,11 +24,11 @@ func InitMigration() {
 		driver,
 	)
 
-	log.Println(m)
-	log.Println(err)
+	// log.Println(m)
+	// log.Println(err)
 	if err != nil {
 		log.Println(err)
 	}
 
-	m.Steps(2)
+	m.Steps(1)
 }

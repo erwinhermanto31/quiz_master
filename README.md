@@ -7,6 +7,10 @@ Required Install
 ================
 ```install docker```
 
+Bin Setup Command Allow
+================
+```sudo chmod +x ./bin/setup```
+
 How to build?
 ================
 You can simple:

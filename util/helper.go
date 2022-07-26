@@ -48,5 +48,6 @@ func PrintHelp() {
 	fmt.Println("update_question <no> <question> <answer> | Updates a question")
 	fmt.Println("delete_question <no>                     | Delete a question")
 	fmt.Println("question <no>                            | Shows a question")
+	fmt.Println("answer_question <no>                     | Answer a question by no")
 	fmt.Println("questions                                | Shows question list")
 }

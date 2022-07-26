@@ -12,17 +12,17 @@ import (
 )
 
 type CreateQuestion struct {
-	repoUsers repo.IQuestions
+	repoQuestion repo.IQuestions
 }
 
 func NewCreateQuestion() *CreateQuestion {
 	return &CreateQuestion{
-		repoUsers: repo.NewQuestion(),
+		repoQuestion: repo.NewQuestion(),
 	}
 }
 
 func (a *CreateQuestion) Handler(ctx context.Context, req entity.Question) (err error) {
-	question, err := a.repoUsers.FindQuestion(ctx, req)
+	question, err := a.repoQuestion.FindQuestion(ctx, req)
 	if err != nil {
 		if err != sql.ErrNoRows {
 			log.Printf("[Handler] Find Question : %v", err)
@@ -35,7 +35,7 @@ func (a *CreateQuestion) Handler(ctx context.Context, req entity.Question) (err 
 		return stringErr.New("Question no " + no + " already existed!")
 	}
 
-	err = a.repoUsers.CreateQuestion(ctx, req)
+	err = a.repoQuestion.CreateQuestion(ctx, req)
 	if err != nil {
 		log.Printf("[Handler] Create Question : %v", err)
 		return err

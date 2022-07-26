@@ -9,17 +9,17 @@ import (
 )
 
 type DeleteQuestion struct {
-	repoUsers repo.IQuestions
+	repoQuestion repo.IQuestions
 }
 
 func NewDeleteQuestion() *DeleteQuestion {
 	return &DeleteQuestion{
-		repoUsers: repo.NewQuestion(),
+		repoQuestion: repo.NewQuestion(),
 	}
 }
 
 func (a *DeleteQuestion) Handler(ctx context.Context, req entity.Question) (err error) {
-	err = a.repoUsers.DeleteQuestion(ctx, req)
+	err = a.repoQuestion.DeleteQuestion(ctx, req)
 	if err != nil {
 		log.Printf("[Handler] DeleteQuestion : %v", err)
 		return err

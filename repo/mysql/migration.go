@@ -24,8 +24,6 @@ func InitMigration() {
 		driver,
 	)
 
-	// log.Println(m)
-	// log.Println(err)
 	if err != nil {
 		log.Println(err)
 	}

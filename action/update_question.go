@@ -9,17 +9,17 @@ import (
 )
 
 type UpdateQuestion struct {
-	repoUsers repo.IQuestions
+	repoQuestion repo.IQuestions
 }
 
 func NewUpdateQuestion() *UpdateQuestion {
 	return &UpdateQuestion{
-		repoUsers: repo.NewQuestion(),
+		repoQuestion: repo.NewQuestion(),
 	}
 }
 
 func (a *UpdateQuestion) Handler(ctx context.Context, req entity.Question) (err error) {
-	err = a.repoUsers.UpdateQuestion(ctx, req)
+	err = a.repoQuestion.UpdateQuestion(ctx, req)
 	if err != nil {
 		log.Printf("[Handler] UpdateQuestion : %v", err)
 		return err

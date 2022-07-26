@@ -9,17 +9,17 @@ import (
 )
 
 type GetQuestion struct {
-	repoUsers repo.IQuestions
+	repoQuestion repo.IQuestions
 }
 
 func NewGetQuestion() *GetQuestion {
 	return &GetQuestion{
-		repoUsers: repo.NewQuestion(),
+		repoQuestion: repo.NewQuestion(),
 	}
 }
 
 func (a *GetQuestion) Handler(ctx context.Context, req entity.Question) (res entity.Question, err error) {
-	data, err := a.repoUsers.FindQuestion(ctx, req)
+	data, err := a.repoQuestion.FindQuestion(ctx, req)
 	if err != nil {
 		log.Printf("[Handler] FindQuestion : %v", err)
 		return res, err

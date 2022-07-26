@@ -5,7 +5,7 @@ const (
 	QueryFindQuestions = `SELECT id, no, question, answer FROM questions`
 
 	// Insert
-	QueryInsertQuestion = `INSERT INTO questions (id, no, question, answer) VALUES (:id, :no, :question, :answer)`
+	QueryInsertQuestion = `INSERT INTO questions (no, question, answer) VALUES (:no, :question, :answer)`
 
 	// Update
 	QueryUpdateQuestion = `UPDATE questions SET no=:no, question=:question, answer=:answer WHERE no=:no`

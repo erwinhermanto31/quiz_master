@@ -1,0 +1,25 @@
+#!/bin/sh
+#load env
+if [ -f .env ]
+then
+  export $(cat .env | sed 's/#.*//g' | xargs)
+fi
+
+# run gomod
+go mod init
+
+# run go mod tidy
+go mod tidy
+
+# run test
+go test -v --cover ./...
+
+# run docker compose
+docker-compose up -d
+
+# run twice for make sure the dabatase is running
+docker-compose up -d
+
+
+
+
